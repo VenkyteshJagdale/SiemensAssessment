@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
 
-//Database Connection
+//Database Connections
 const connectDB = async () => {
     try {
         await mongoose.connect("mongodb://localhost:27017/userRegi");

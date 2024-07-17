@@ -1,0 +1,31 @@
+<div>
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Name:</label>
+        <input id="name" formControlName="name" />
+        <div *ngIf="registerForm.get('name').invalid && registerForm.get('name').touched">
+          Name is required.
+        </div>
+      </div>
+  
+      <div>
+        <label for="dob">Date-of-Birth:</label>
+        <input id="dob" type="date" formControlName="dob" />
+        <div *ngIf="registerForm.get('dob').invalid && registerForm.get('dob').touched">
+          Date of Birth is required.
+        </div>
+      </div>
+  
+      <div>
+        <label for="address">Address:</label>
+        <textarea id="address" formControlName="address"></textarea>
+        <div *ngIf="registerForm.get('address').invalid && registerForm.get('address').touched">
+          Address is required.
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="registerForm.invalid">Submit</button>
+    </form>
+  </div>
+  
